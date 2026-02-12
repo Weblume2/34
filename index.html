@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom's Cafe | The Heart of the Neighborhood</title>
+    <meta name="description" content="High-performance coffee brewed with home-style love. Visit Mom's Cafe for the best lattes, fresh pastries, and a warm community atmosphere.">
+    
+    <!-- Tailwind CSS for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Serif for Trust, Sans for Performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#FCF9F5',
+                            100: '#F3E9DC',
+                            200: '#E7D1B7',
+                            300: '#D4A373', // Accent Gold/Honey
+                            400: '#B08968',
+                            600: '#6D4C41',
+                            800: '#3D2B1F', // Deep Coffee
+                            900: '#261912',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- SCHEMA.ORG (The "Pull" - Machine Experience) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Mom's Cafe",
+      "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb",
+      "@id": "https://momscafe.demo",
+      "url": "https://momscafe.demo",
+      "telephone": "+15551234567",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Aroma Street",
+        "addressLocality": "Coffee City",
+        "postalCode": "90210",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        }
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, #FCF9F5 40%, rgba(252, 249, 245, 0.2) 100%);
+        }
+    </style>
+</head>
+<body class="bg-coffee-50 text-coffee-800 font-sans antialiased">
+
+    <!-- NAVIGATION (Z-Pattern Entry) -->
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-coffee-800 rounded-full flex items-center justify-center text-white transition-transform group-hover:rotate-12">
+                    <i data-lucide="coffee"></i>
+                </div>
+                <span class="text-2xl font-serif font-bold tracking-tight">Mom's <span class="text-coffee-300 italic">Cafe</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-10 font-semibold text-sm uppercase tracking-widest">
+                <a href="#menu" class="hover:text-coffee-300 transition-colors">Menu</a>
+                <a href="#about" class="hover:text-coffee-300 transition-colors">The Story</a>
+                <a href="#location" class="hover:text-coffee-300 transition-colors">Visit</a>
+                <button class="bg-coffee-800 text-white px-8 py-3 rounded-full hover:bg-black transition-all transform hover:scale-105 shadow-xl">
+                    Order Online
+                </button>
+            </nav>
+
+            <button class="md:hidden p-2" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (BLUF Design) -->
+    <main>
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 hero-gradient z-10"></div>
+                <img 
+                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80" 
+                    alt="Warm Cafe Atmosphere" 
+                    class="w-full h-full object-cover"
+                />
+            </div>
+
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 bg-coffee-300/10 text-coffee-300 px-4 py-2 rounded-full mb-8 font-bold text-sm uppercase tracking-wider">
+                        <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
+                        <span>Brewed with Love Since 1998</span>
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-serif font-bold leading-[1.1] mb-8">
+                        The Soul of your <br>
+                        <span class="text-coffee-300 italic underline decoration-coffee-100">Morning Routine.</span>
+                    </h1>
+                    <p class="text-xl text-coffee-600 mb-12 leading-relaxed max-w-xl font-medium">
+                        Engineered for the perfect cup, designed for human connection. We blend high-performance coffee science with the warmth of a home kitchen.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="#menu" class="bg-coffee-800 text-white px-12 py-6 rounded-2xl text-lg font-bold flex items-center justify-center gap-3 hover:bg-black transition-all shadow-2xl hover:-translate-y-1">
+                            Explore the Menu <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#location" class="bg-white border-2 border-coffee-800/10 px-12 py-6 rounded-2xl text-lg font-bold hover:bg-coffee-100 transition-all text-center">
+                            Find us Nearby
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Proof Bar -->
+            <div class="absolute bottom-12 left-0 right-0 z-20 hidden lg:block">
+                <div class="container mx-auto px-6">
+                    <div class="bg-white/40 backdrop-blur-xl border border-white/20 p-8 rounded-[40px] flex justify-between items-center shadow-2xl">
+                        <div class="flex items-center gap-4">
+                            <div class="flex -space-x-3">
+                                <img src="https://i.pravatar.cc/150?u=1" class="w-12 h-12 rounded-full border-4 border-white" alt="User">
+                                <img src="https://i.pravatar.cc/150?u=2" class="w-12 h-12 rounded-full border-4 border-white" alt="User">
+                                <img src="https://i.pravatar.cc/150?u=3" class="w-12 h-12 rounded-full border-4 border-white" alt="User">
+                            </div>
+                            <p class="font-bold text-coffee-800">4.9/5 <span class="text-coffee-600 font-normal underline">from 2,400+ neighbors</span></p>
+                        </div>
+                        <div class="h-10 w-px bg-coffee-800/10"></div>
+                        <p class="font-bold flex items-center gap-2"><i data-lucide="zap" class="text-coffee-300 fill-current"></i> Roasted Fresh Every 24 Hours</p>
+                        <div class="h-10 w-px bg-coffee-800/10"></div>
+                        <p class="font-bold flex items-center gap-2"><i data-lucide="wifi" class="text-coffee-300"></i> Free Gigabit Fiber WiFi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU SECTION (F-Pattern Content) -->
+        <section id="menu" class="py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                    <div class="max-w-xl">
+                        <h2 class="text-5xl font-serif font-bold mb-6">Our Daily Brews</h2>
+                        <p class="text-lg text-coffee-600">A curated collection of artisan beans, house-made syrups, and pastries baked at 4:00 AM every single day.</p>
+                    </div>
+                    <div class="flex gap-4 overflow-x-auto pb-4 md:pb-0">
+                        <button class="menu-tab active px-8 py-3 rounded-full font-bold bg-coffee-800 text-white shadow-lg whitespace-nowrap">Full Menu</button>
+                        <button class="menu-tab px-8 py-3 rounded-full font-bold bg-coffee-50 text-coffee-600 hover:bg-coffee-100 whitespace-nowrap">Seasonal</button>
+                        <button class="menu-tab px-8 py-3 rounded-full font-bold bg-coffee-50 text-coffee-600 hover:bg-coffee-100 whitespace-nowrap">Bakery</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Item 1 -->
+                    <article class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-[32px] mb-6">
+                            <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&w=600&q=80" alt="Latte" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl font-bold shadow-lg">$5.50</div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 flex items-center justify-between">
+                            Signature Honey Latte
+                            <span class="text-coffee-300 text-xs uppercase tracking-tighter bg-coffee-100 px-2 py-1 rounded">Popular</span>
+                        </h3>
+                        <p class="text-coffee-600 mb-6">Double shot espresso, local wildflower honey, and silky steamed oat milk.</p>
+                        <button class="w-full py-4 border-2 border-coffee-800 rounded-2xl font-bold group-hover:bg-coffee-800 group-hover:text-white transition-all">Add to Cart</button>
+                    </article>
+
+                    <!-- Item 2 -->
+                    <article class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-[32px] mb-6">
+                            <img src="https://images.unsplash.com/photo-1559925393-8be0ec418cd9?auto=format&fit=crop&w=600&q=80" alt="Cold Brew" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl font-bold shadow-lg">$6.25</div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">24h Midnight Cold Brew</h3>
+                        <p class="text-coffee-600 mb-6">Slow-steeped for 24 hours. Notes of dark chocolate and toasted hazelnuts.</p>
+                        <button class="w-full py-4 border-2 border-coffee-800 rounded-2xl font-bold group-hover:bg-coffee-800 group-hover:text-white transition-all">Add to Cart</button>
+                    </article>
+
+                    <!-- Item 3 -->
+                    <article class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-[32px] mb-6">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Bakery" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl font-bold shadow-lg">$4.75</div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Mom's Sourdough Swirl</h3>
+                        <p class="text-coffee-600 mb-6">Freshly baked sourdough pastry with organic Ceylon cinnamon and glaze.</p>
+                        <button class="w-full py-4 border-2 border-coffee-800 rounded-2xl font-bold group-hover:bg-coffee-800 group-hover:text-white transition-all">Add to Cart</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE STORY SECTION -->
+        <section id="about" class="py-32 bg-coffee-800 text-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2 relative">
+                        <div class="absolute -top-10 -left-10 w-64 h-64 bg-coffee-300/20 rounded-full blur-[100px]"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" 
+                            alt="Coffee Prep" 
+                            class="rounded-[48px] shadow-2xl relative z-10 w-full object-cover aspect-[4/5]"
+                        />
+                        <div class="absolute -bottom-8 -right-8 bg-coffee-300 p-10 rounded-[40px] z-20 shadow-2xl animate-float">
+                            <p class="font-serif italic text-2xl leading-tight text-coffee-900">"We don't sell coffee. We sell the energy to start your story."</p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-5xl md:text-6xl font-serif font-bold mb-10 leading-tight">Hand-Crafted <br><span class="text-coffee-300">Community.</span></h2>
+                        <p class="text-xl text-coffee-200 mb-10 leading-relaxed font-light">
+                            Mom started this cafe in a tiny garage with a mission to bring neighbors together. Today, we use the world's most advanced brewing technology, but our heart remains at that original kitchen table.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 mb-12">
+                            <div>
+                                <h4 class="text-3xl font-bold text-coffee-300 mb-2">100%</h4>
+                                <p class="text-coffee-200">Ethically Sourced Beans</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold text-coffee-300 mb-2">0%</h4>
+                                <p class="text-coffee-200">Artificial Syrups</p>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-3 text-lg font-bold group border-b-2 border-coffee-300 pb-2">
+                            Read Mom's Full Story <i data-lucide="external-link" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISIT SECTION (Transactional Intent) -->
+        <section id="location" class="py-32 bg-coffee-50">
+            <div class="container mx-auto px-6">
+                <div class="bg-white rounded-[60px] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 p-16 md:p-24">
+                        <h2 class="text-5xl font-serif font-bold mb-12 italic">Come on Over.</h2>
+                        
+                        <div class="space-y-10">
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-2xl flex items-center justify-center text-coffee-800">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-1">Our Location</h4>
+                                    <p class="text-coffee-600">123 Aroma Street, Coffee City, CA 90210</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-2xl flex items-center justify-center text-coffee-800">
+                                    <i data-lucide="clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-1">Brewing Hours</h4>
+                                    <p class="text-coffee-600">Mon – Fri: 7:00 AM — 8:00 PM</p>
+                                    <p class="text-coffee-600">Sat – Sun: 8:00 AM — 6:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-2xl flex items-center justify-center text-coffee-800">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-1">Order Ahead</h4>
+                                    <p class="text-coffee-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-16 flex gap-4">
+                            <a href="#" class="w-14 h-14 bg-coffee-50 rounded-2xl flex items-center justify-center hover:bg-coffee-800 hover:text-white transition-all">
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a href="#" class="w-14 h-14 bg-coffee-50 rounded-2xl flex items-center justify-center hover:bg-coffee-800 hover:text-white transition-all">
+                                <i data-lucide="facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 min-h-[400px] bg-coffee-200 relative grayscale hover:grayscale-0 transition-all duration-700">
+                        <!-- Mock Map / Visual -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white/80 backdrop-blur-md p-6 rounded-3xl shadow-2xl flex items-center gap-4 animate-bounce">
+                                <div class="w-10 h-10 bg-coffee-800 rounded-full flex items-center justify-center text-white">
+                                    <i data-lucide="coffee" class="w-5 h-5"></i>
+                                </div>
+                                <span class="font-bold">Mom's Cafe is Here!</span>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Map Area">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-coffee-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-10">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-coffee-900">
+                    <i data-lucide="coffee" class="w-6 h-6"></i>
+                </div>
+                <span class="text-3xl font-serif font-bold tracking-tight">Mom's Cafe</span>
+            </div>
+            <p class="text-coffee-200/60 mb-10 max-w-lg mx-auto">
+                The neighborhood's favorite spot for coffee, community, and high-performance mornings.
+            </p>
+            <div class="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-widest font-bold mb-16">
+                <a href="#menu" class="hover:text-coffee-300">Menu</a>
+                <a href="#about" class="hover:text-coffee-300">Our Story</a>
+                <a href="#location" class="hover:text-coffee-300">Privacy</a>
+                <a href="#" class="hover:text-coffee-300">Careers</a>
+            </div>
+            <p class="text-coffee-200/20 text-xs">© 2026 Mom's Cafe Digital Entity. Built for the Cognitive Web.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass-nav', 'py-4', 'shadow-xl');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.remove('glass-nav', 'py-4', 'shadow-xl');
+                header.classList.add('py-6');
+            }
+        });
+
+        // Mobile Menu Toggle (Simplified for Demo)
+        const btn = document.getElementById('mobile-menu-btn');
+        btn.addEventListener('click', () => {
+            alert('This would open the 2026 Navigation Overlay in a full production environment.');
+        });
+
+        // "Add to Cart" Dopamine Hit (Variable Reward Pattern)
+        const addButtons = document.querySelectorAll('article button');
+        addButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const originalText = button.innerText;
+                button.innerText = 'Added to Bag! ✨';
+                button.classList.add('bg-green-600', 'border-green-600', 'text-white');
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('bg-green-600', 'border-green-600', 'text-white');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
